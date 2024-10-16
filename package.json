@@ -1,0 +1,13 @@
+{
+  "name": "quizApp",
+  "version": "1.0.0",
+  "description": "Restful api",
+  "main": "app.js",
+  "author": "Shiv Prakash Singh",
+  "license": "MIT",
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "express": "^4.21.1",
+    "typescript": "^5.6.3"
+  }
+}
