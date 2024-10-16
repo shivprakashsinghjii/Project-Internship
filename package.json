@@ -13,6 +13,12 @@
   },
   "scripts": {
     "build": "tsc --noEmitOnError",
-    "start": "node ./dist/app.js"
+    "start": "node ./dist/app.js",
+    "start:ts": "ts-node ./src/app.ts",
+    "start:dev": "nodemon"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2"
   }
 }

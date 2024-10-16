@@ -10,6 +10,9 @@ interface ReturnResponse {
 const registerUser = async (req: Request, res: Response) => {
   let resp: ReturnResponse;
   try {
+     
+
+
     const user = new User(req.body);
     const result = await user.save();
 

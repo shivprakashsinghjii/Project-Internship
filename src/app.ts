@@ -5,7 +5,7 @@ import UserRoute from "./routes/user";
 
 const app = express();
 
-const connectionString = "mongodb+srv://spshiv2202:12345@shiva.wvtydyr.mongodb.net/YourDatabaseName?retryWrites=true&w=majority&appName=Shiva";
+const connectionString = process.env.CONNECTION_STRING || "";
 
 app.use(express.json());
 app.get('/', (req, res) => {
@@ -15,7 +15,7 @@ app.use('/user', UserRoute);
 
 mongoose.connect(connectionString)
   .then(() => {
-    app.listen(3000, () => {
+    app.listen(process.env.PORT, () => {
       console.log("Server connected and MongoDB connected");
     });
   })

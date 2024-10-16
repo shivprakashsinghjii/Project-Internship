@@ -1,0 +1,9 @@
+{
+  "env":{
+    "CONNECTION_STRING":"mongodb+srv://spshiv2202:12345@shiva.wvtydyr.mongodb.net/YourDatabaseName?retryWrites=true&w=majority&appName=Shiva",
+    "PORT":3000
+  },
+  "watch":["src"],
+  "ext":"ts,json",
+  "exec":"ts-node ./src/app.ts"
+}
