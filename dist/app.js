@@ -7,7 +7,7 @@ const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const user_1 = __importDefault(require("./routes/user"));
 const app = (0, express_1.default)();
-const connectionString = "mongodb+srv://spshiv2202:12345@shiva.wvtydyr.mongodb.net/YourDatabaseName?retryWrites=true&w=majority&appName=Shiva";
+const connectionString = process.env.CONNECTION_STRING || "";
 app.use(express_1.default.json());
 app.get('/', (req, res) => {
     res.send("Hi Hello");
@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 app.use('/user', user_1.default);
 mongoose_1.default.connect(connectionString)
     .then(() => {
-    app.listen(3000, () => {
+    app.listen(process.env.PORT, () => {
         console.log("Server connected and MongoDB connected");
     });
 })

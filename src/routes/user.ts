@@ -1,9 +1,11 @@
-import express from "express";
-import { getUser, registerUser,updateUser } from "../controllers/user";
+import { Router } from "express";
+import { registerUser, loginUser, getUser, updateUser } from "../controllers/user";
 
-const router = express.Router();
-router.post("/", registerUser);
-router.get('/:userId',getUser);
-router.put('/',updateUser)
+const router = Router();
+
+router.post("/register", registerUser);
+router.post("/login", loginUser);
+router.get("/:userId", getUser);
+router.put("/update", updateUser);
 
 export default router;
