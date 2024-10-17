@@ -4,6 +4,7 @@ import { Request, Response, NextFunction } from "express";
 import ProjectError from './helper/error';
 import UserRoute from "./routes/user";
 import authRoute from "./routes/auth";
+import quizRoute from "./routes/quiz";
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.get('/', (req, res) => {
 
 app.use('/user', UserRoute);
 app.use('/auth', authRoute);
+app.use('/quiz', quizRoute);
 
 // Error Handling Middleware
 app.use((err: ProjectError, req: Request, res: Response, next: NextFunction) => {
